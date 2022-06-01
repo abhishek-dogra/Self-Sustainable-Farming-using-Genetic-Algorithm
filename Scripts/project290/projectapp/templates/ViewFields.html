@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body class="container">
+<table class="table">
+  <thead class="thead-dark">
+
+  <tr><th style="height:60px;width:100px">Plot ID</th><th>Plot Area</th><th>Suitable Crops</th><th>Recommended Crop</th></tr>
+  </thead>
+<tbody>
+  {% for i in ThisTable %}
+
+  <tr>
+    {% for j in i %}
+    <td style="height:50px;width:100px">{{j}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</tbody>
+
+</table>
+
+<br><br>
+
+
+<a href="/getxl" class="btn btn-primary">Download Excel file</a>
+<br><br><br><br>
+<ul>
+  {% for i in Messages %}
+  {{i}}
+  <br>
+  {% endfor %}
+</ul>
+
+
+
+  </body>
+</html>

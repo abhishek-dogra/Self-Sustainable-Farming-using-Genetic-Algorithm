@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+<body class="container">
+
+<form action="/reqpage" method="post">
+  {% csrf_token %}
+  {% for i in cropVar %}
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="Name4">Crop Name</label>
+      <input type="text" class="form-control" id="Name4" name="crop{{forloop.counter}}">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Yield4">Yield</label>
+      <input type="text" class="form-control" id="Yield4" name="crop{{forloop.counter}}" value="1">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Rate4">Rate</label>
+      <input type="text" class="form-control" id="rate4" name="crop{{forloop.counter}}" value="20">
+    </div>
+  </div>
+<!--Crop Name : <input type="text" name="crop{{forloop.counter}}">
+Yield : <input type="text" name="crop{{forloop.counter}}">
+Rate :<input type="text" name="crop{{forloop.counter}}">-->
+  {% endfor %}
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <body class="container">
+    <form action="/xcelRead" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="form-row">
+          <label for="Name4">Crop Details file : &nbsp</label>
+    <input type="file" class="btn btn-primary" name="excelfile1">
+</div>
+    <br>
+      <div class="form-row">
+        <label for="Name4">Requirements file : &nbsp</label>
+    <input type="file" class="btn btn-primary" name="excelfile2">
+</div>
+    <br>
+      <div class="form-row">
+        <label >Field details : &nbsp</label>
+  <input type="file" class="btn btn-primary" name="excelfile3">
+</div>
+    <br><br>
+
+<input type="submit" name="" value="submit">
+
+    </form>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body class="container">
+    <form action="/fieldsSubmit" method="post">
+      {% csrf_token %}
+
+{% for i in fields %}
+
+
+
+
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label for="Name{{forloop.counter}}">Plot Number</label>
+    <input type="text" class="form-control" id="Name{{forloop.counter}}" name="field{{forloop.counter}}" value="{{forloop.counter}}">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="Area{{forloop.counter}}">Plot Area</label>
+    <input type="text" class="form-control" id="Area{{forloop.counter}}" name="field{{forloop.counter}}" value="2500">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="Crops{{forloop.counter}}">Suitable Crops</label>
+    <input type="text" class="form-control" id="Crops{{forloop.counter}}" name="field{{forloop.counter}}" value="A,B,C">
+  </div>
+</div>
+
+
+
+
+
+
+    {% endfor %}
+      <button type="submit" class="btn btn-primary" name="button">Submit</button>
+    </form>
+  </body>
+</html>
